@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <tytle>An analog clock</tytle>
+        <script src="movement.js" defer></script>
+        <link type="text/css" rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+    <!-- Aqui precisamos fazer um relógio por svg. Primeiro instanciamos um relógio -->
+    <!-- Depois temos que fazer a face, os ponteiros das horas, minutos e segundos -->
+        <main class="main">
+            <div class="clockbox">
+                <svg version="1.1" id="clock" width="400" height="400" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="face">
+                        <!-- Agora vou fazer o relógio de fato-->
+                        <!-- Ponteiros verticais e horizontais -->
+                        <path d="M 200 12.5 v 30"/>
+                        <path d="M 200 387.5 v -30"/>
+                        <path d="M 12.5 200 h 30"/>
+                        <path d="M 387.5 200 h -30"/>
+
+                        <!-- Entre o primeiro quadrante -->
+                        <path d="M 293.75 37.62 L 283.75 54.94"/>
+                        <path d="M 362.38 106.25 L 345.06 116.25"/>
+                        
+                        <!-- Entre o segundo quadrante -->
+                        <path d="M 106.25 37.62 L 116.25 54.94"/>
+                        <path d="M 37.62 106.25 L 54.94 116.25"/>
+
+                        <!-- Entre o terceiro quadrante -->
+                        <path d="M 37.62 293.75 L 54.94 283.75"/> 
+                        <path d="M 106.25 362.38 L 116.25 345.06"/> 
+
+                        <!-- Entre o quarto quadrante -->
+                        <path d="M 293.75 362.38 L 283.75 345.06"/>
+                        <path d="M 362.38 293.75 L 345.06 283.75"/>
+
+                        <!-- Vou colocar um círculo no centro -->
+                        <circle cx="200" cy="200" r="8"/>
+                    </g>
+
+                    <g id="hour">
+                        <path d="M200 200 V 75"/>
+                    </g>
+
+                    <g id="minute">
+                        <path d="M200 200 V 30"/>
+                    </g>
+
+                    <g id="second">
+                        <path d="M200 235 V 25"/>
+                    </g>
+                </svg> 
+            </div>
+        </main>
+    </body>
+</html>
